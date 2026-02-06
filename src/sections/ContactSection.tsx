@@ -29,11 +29,11 @@ export default function ContactSection() {
 
     const ctx = gsap.context(() => {
       // Left content animation
-      gsap.fromTo(left, 
-        { x: -40, opacity: 0 }, 
-        { 
-          x: 0, 
-          opacity: 1, 
+      gsap.fromTo(left,
+        { x: -40, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
           duration: 0.8,
           ease: 'power2.out',
           scrollTrigger: {
@@ -45,11 +45,11 @@ export default function ContactSection() {
       );
 
       // Right form animation
-      gsap.fromTo(right, 
-        { x: 40, opacity: 0 }, 
-        { 
-          x: 0, 
-          opacity: 1, 
+      gsap.fromTo(right,
+        { x: 40, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
           duration: 0.8,
           ease: 'power2.out',
           scrollTrigger: {
@@ -62,11 +62,11 @@ export default function ContactSection() {
 
       // Form fields stagger
       fields.forEach((field, i) => {
-        gsap.fromTo(field, 
-          { y: 15, opacity: 0 }, 
-          { 
-            y: 0, 
-            opacity: 1, 
+        gsap.fromTo(field,
+          { y: 15, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
             duration: 0.5,
             ease: 'power2.out',
             scrollTrigger: {
@@ -95,16 +95,16 @@ export default function ContactSection() {
   };
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
       id="contact"
       className="section-flowing relative overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #0a0514 0%, #120820 50%, #0a0514 100%)' }}
     >
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <img 
-          src="/assets/particle_network.jpg" 
+        <img
+          src="/assets/particle_network.jpg"
           alt=""
           className="w-full h-full object-cover opacity-20"
         />
@@ -112,7 +112,7 @@ export default function ContactSection() {
       </div>
 
       {/* Ambient glow behind form */}
-      <div 
+      <div
         className="absolute w-[700px] h-[700px] rounded-full pointer-events-none"
         style={{
           right: '5%',
@@ -121,7 +121,7 @@ export default function ContactSection() {
           filter: 'blur(60px)',
         }}
       />
-      <div 
+      <div
         className="absolute w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{
           left: '10%',
@@ -139,12 +139,12 @@ export default function ContactSection() {
               <Sparkles className="w-4 h-4 text-neon-cyan" />
               <span className="text-sm text-neon-cyan font-medium">Get in Touch</span>
             </div>
-            
+
             <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-4">
               Let's build<br />
               <span className="text-gradient">what's next.</span>
             </h2>
-            
+
             <p className="text-white/60 text-base md:text-lg mb-10 max-w-md">
               Tell us what you're building. We'll reply within 24 hours.
             </p>
@@ -161,13 +161,13 @@ export default function ContactSection() {
                 <div className="w-12 h-12 rounded-xl bg-neon-cyan/20 flex items-center justify-center group-hover:bg-neon-cyan/30 transition-colors">
                   <Phone className="w-5 h-5 text-neon-cyan" />
                 </div>
-                <span className="text-white group-hover:text-neon-cyan transition-colors">+1 (555) 014-2200</span>
+                <span className="text-white group-hover:text-neon-cyan transition-colors">+91 8088356247</span>
               </div>
               <div className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-xl bg-neon-pink/20 flex items-center justify-center group-hover:bg-neon-pink/30 transition-colors">
                   <MapPin className="w-5 h-5 text-neon-pink" />
                 </div>
-                <span className="text-white group-hover:text-neon-pink transition-colors">Austin / Remote</span>
+                <span className="text-white group-hover:text-neon-pink transition-colors">Remote</span>
               </div>
             </div>
 
@@ -178,9 +178,9 @@ export default function ContactSection() {
                 { icon: Twitter, color: 'neon-cyan' },
                 { icon: Github, color: 'neon-pink' },
               ].map(({ icon: Icon, color }, i) => (
-                <a 
+                <a
                   key={i}
-                  href="#" 
+                  href="#"
                   className={`w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center hover:bg-${color}/20 transition-all duration-300 group`}
                   onClick={(e) => { e.preventDefault(); toast.info('Coming soon!'); }}
                 >
@@ -195,9 +195,9 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-6 md:p-8 relative overflow-hidden">
               {/* Form glow */}
               <div className="absolute -inset-px bg-gradient-to-br from-neon-purple/20 via-neon-cyan/10 to-neon-pink/20 rounded-3xl blur-sm opacity-50" />
-              
+
               <div className="relative space-y-5">
-                <div 
+                <div
                   ref={(el) => { if (el) fieldsRef.current[0] = el; }}
                   className="grid grid-cols-1 md:grid-cols-2 gap-5"
                 >
@@ -275,8 +275,13 @@ export default function ContactSection() {
                 Softix<span className="text-neon-cyan">Tech</span>
               </span>
             </div>
-            <div className="text-white/40 text-sm">
-              © 2026 SoftixTech. All rights reserved.
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+              <div className="text-white/70 text-sm font-medium">
+                Contact: <a href="tel:+918088356246" className="text-neon-cyan hover:text-neon-purple transition-colors">+91 8088356246</a>
+              </div>
+              <div className="text-white/40 text-sm">
+                © 2026 SoftixTech. All rights reserved.
+              </div>
             </div>
           </div>
         </div>
